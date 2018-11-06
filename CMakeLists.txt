@@ -5,6 +5,10 @@
 cmake_minimum_required(VERSION 3.9)
 project(leveldb VERSION 1.21.0 LANGUAGES C CXX)
 
+set(CMAKE_BUILD_TYPE "Debug")
+set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g -ggdb")
+set(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+
 # This project can use C11, but will gracefully decay down to C89.
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED OFF)
